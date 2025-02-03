@@ -27,30 +27,24 @@ export default {
 
 <style lang="scss">
 .nav-menu {
-  background-color: #f8f9fa;
-  padding: 1rem;
-}
-
-.nav-menu__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-menu__item {
-  margin: 0;
-}
-
-.nav-menu__link {
-  text-decoration: none;
-  color: $text-dark;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-menu__link:hover {
-  color: #007bff;
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  &__item {
+    margin: 0;
+  }
+  &__link {
+    text-decoration: none;
+    color: $text-dark;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #007bff;
+    }
+  }
 }
 </style>
