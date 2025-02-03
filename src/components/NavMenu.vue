@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 .nav-menu {
   background-color: #f8f9fa;
   padding: 1rem;
@@ -45,7 +45,7 @@ export default {
 
 .nav-menu__link {
   text-decoration: none;
-  color: #333;
+  color: $text-dark;
   font-weight: 500;
   transition: color 0.3s ease;
 }
