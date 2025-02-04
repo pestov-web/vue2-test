@@ -17,4 +17,15 @@ export default {
   </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.header {
+  display: flex;
+  height: 92px;
+  border-bottom: $border solid 1px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+</style>
