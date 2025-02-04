@@ -1,15 +1,10 @@
-<!-- eslint-disable implicit-arrow-linebreak -->
 <template>
   <div id="app">
     <AppHeader />
     <main class="page">
-      <GoodsList
-        :data="goods"
-        :category="category"
-        :isModalOpen="isModalOpen"
-        :modalContent="modalContent"
-      />
+      <GoodsList :data="goods" :category="category" @open-modal="openModal" />
     </main>
+    <GoodsModal v-if="isModalOpen" :modalContent="modalContent" @close="closeModal" />
     <AppFooter />
   </div>
 </template>
@@ -18,6 +13,7 @@
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
 import GoodsList from './components/GoodsList.vue';
+import GoodsModal from './components/GoodsModal.vue';
 
 export default {
   name: 'App',
@@ -25,6 +21,7 @@ export default {
     AppHeader,
     AppFooter,
     GoodsList,
+    GoodsModal,
   },
   data() {
     return {
@@ -66,6 +63,18 @@ export default {
       isModalOpen: false,
       modalContent: null,
     };
+  },
+  methods: {
+    openModal(content) {
+      console.log('Открытие модального окна:', content);
+      this.modalContent = content;
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      console.log('Закрытие модального окна');
+      this.isModalOpen = false;
+      this.modalContent = null;
+    },
   },
   computed: {
     // filteredProducts() {

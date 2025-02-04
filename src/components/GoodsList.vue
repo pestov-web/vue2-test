@@ -14,7 +14,13 @@ export default {
     <ul class="goods__list">
       <li v-for="good in data" :key="good.id" class="goods__item">
         <img :src="`/images/${good.pictures[0]}`" :alt="good.title" />
-        <h3 class="goods__title">{{ good.title }}</h3>
+        <h3
+          class="goods__title"
+          @click="$emit('open-modal', good)"
+          @keydown.enter="$emit('open-modal', good)"
+        >
+          {{ good.title }}
+        </h3>
         <div v-if="good.stock" class="goods__stock">
           <p class="goods__price">{{ good.price }}</p>
           <button class="goods__btn">Добавить в корзину</button>
@@ -45,6 +51,13 @@ export default {
     gap: 1rem;
     max-width: 280px;
     width: 100%;
+  }
+  &__title {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #007bff;
+    }
   }
 }
 </style>

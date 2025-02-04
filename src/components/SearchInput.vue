@@ -5,6 +5,7 @@ export default {
 };
 </script>
 <template>
-  <input v-model="searchQuery" placeholder="Поиск..." />
+  <div>Search</div>
+  <!-- <input v-model="searchQuery" placeholder="Поиск..." /> -->
 </template>
 <style lang="scss"></style>
