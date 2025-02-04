@@ -1,10 +1,12 @@
 <script>
 import NavMenu from './NavMenu.vue';
+import SearchInput from './SearchInput.vue';
 
 export default {
   name: 'AppHeader',
   components: {
     NavMenu,
+    SearchInput,
   },
 };
 </script>
@@ -13,6 +15,7 @@ export default {
   <header class="header">
     <div class="header__container">
       <NavMenu />
+      <SearchInput />
     </div>
   </header>
 </template>
@@ -21,8 +24,12 @@ export default {
 .header {
   display: flex;
   height: 92px;
+  align-items: center;
+  justify-content: center;
   border-bottom: $border solid 1px;
   &__container {
+    max-width: 1280px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

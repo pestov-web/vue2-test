@@ -1,51 +1,18 @@
 <script>
 export default {
   name: 'GoodsList',
-  data() {
-    return {
-      goods: [
-        {
-          id: 1,
-          title: '«Рождение Венеры» Сандро Боттичелли',
-          stock: true,
-          price: '1000000',
-          description: '#',
-          pictures: ['1.png'],
-        },
-        {
-          id: 2,
-          title: '«Тайная вечеря» Леонардо да Винчи',
-          stock: true,
-          price: '3000000',
-          description: '#',
-          pictures: ['2.png'],
-        },
-        {
-          id: 3,
-          title: '«Сотворение Адама» Микеланджело',
-          stock: true,
-          price: '5000000',
-          description: '#',
-          pictures: ['3.png'],
-        },
-        {
-          id: 4,
-          title: '«Урок анатомии» Рембрандт',
-          stock: false,
-          price: '7000000',
-          description: '#',
-          pictures: ['4.png'],
-        },
-      ],
-    };
+  props: {
+    category: String,
+    data: Array,
   },
 };
 </script>
 
 <template>
   <section class="section goods">
+    <h2 class="section__title">{{ category }}</h2>
     <ul class="goods__list">
-      <li v-for="good in goods" :key="good.id" class="goods__item">
+      <li v-for="good in data" :key="good.id" class="goods__item">
         <img :src="`/images/${good.pictures[0]}`" :alt="good.title" />
         <h3 class="goods__title">{{ good.title }}</h3>
         <div v-if="good.stock" class="goods__stock">
@@ -60,7 +27,7 @@ export default {
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .goods {
   &__list {
     list-style: none;
@@ -76,6 +43,8 @@ export default {
     border: $border solid 1px;
     padding: 1rem;
     gap: 1rem;
+    max-width: 280px;
+    width: 100%;
   }
 }
 </style>

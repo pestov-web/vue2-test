@@ -15,4 +15,18 @@ export default {
     </div>
   </footer>
 </template>
-<style lang="scss"></style>
+<style lang="scss">
+.footer {
+  margin-top: 30px;
+  display: flex;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-footer;
+  &__container {
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+</style>
