@@ -1,7 +1,6 @@
 input {
   box-sizing: border-box;
   height: 48px;
-  width: fit-content;
   border: $border solid 1px;
   padding: 0 15px;
   &:active {

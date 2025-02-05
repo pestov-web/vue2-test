@@ -1,0 +1,13 @@
+.price {
+  display: flex;
+  flex-direction: column;
+  &__original {
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__discount {
+    font-weight: 700;
+  }
+}

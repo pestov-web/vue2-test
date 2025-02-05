@@ -59,7 +59,7 @@ export default {
             <button class="goods__info__btn">Купить</button>
           </div>
           <div v-else class="goods__info__stock">
-            <p class="goods__info__sold">Продано на аукционе</p>
+            <p class="goods__info__sold">Продана на аукционе</p>
           </div>
         </div>
       </li>

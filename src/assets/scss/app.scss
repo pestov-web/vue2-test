@@ -4,12 +4,20 @@
 
 //vendors
 @import 'vendors/slider';
+
 // base
 @import 'base/reset';
 @import 'base/fonts';
 @import 'base/typography';
 
 // layout
+@import 'layout/main';
 @import 'layout/section';
 @import 'layout/button';
 @import 'layout/input';
+
+// components
+@import 'components/GoodsSlider.scss';
+@import 'components/NavMenu.scss';
+@import 'components/PriceDisplay.scss';
+@import 'components/SearchInput.scss';

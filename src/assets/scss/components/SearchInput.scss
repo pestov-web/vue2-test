@@ -1,0 +1,15 @@
+.search-form {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 500px;
+  width: 100%;
+  font-size: 14px;
+  &__input {
+    width: 100%;
+    max-width: 295px;
+  }
+  &__btn {
+    width: 122px;
+    font-size: 14px;
+  }
+}

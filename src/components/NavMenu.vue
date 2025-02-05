@@ -24,27 +24,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.nav-menu {
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0 95px;
-    display: flex;
-    gap: 1rem;
-  }
-  &__item {
-    margin: 0;
-  }
-  &__link {
-    text-decoration: none;
-    color: $text-dark;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    &:hover {
-      color: #007bff;
-    }
-  }
-}
-</style>

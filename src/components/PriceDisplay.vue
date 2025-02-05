@@ -12,14 +12,19 @@
     </template>
     <template v-else>
       <p class="price">
-        {{ formatPrice(good.price, good.currency) }}
+        <span class="price__discount">
+          {{ formatPrice(good.price, good.currency) }}
+        </span>
       </p>
     </template>
   </div>
 </template>
 
 <script>
+import priceMixin from '../mixins/priceMixin';
+
 export default {
+  mixins: [priceMixin],
   name: 'PriceDisplay',
   props: {
     good: {
@@ -27,37 +32,5 @@ export default {
       required: true,
     },
   },
-  methods: {
-    formatPrice(price, currency) {
-      let symbol = '';
-      switch (currency) {
-        case 'rub':
-          symbol = '₽';
-          break;
-        case 'usd':
-          symbol = '$';
-          break;
-        default:
-          symbol = ' уе';
-      }
-      return `${price} ${symbol}`;
-    },
-  },
 };
 </script>
-
-<style lang="scss">
-.price {
-  display: flex;
-  flex-direction: column;
-  &__original {
-    text-decoration: line-through;
-    margin-right: 8px;
-  }
-
-  &__discount {
-    font-weight: bold;
-    color: #e60000; /* можно задать свой цвет для скидочной цены */
-  }
-}
-</style>
