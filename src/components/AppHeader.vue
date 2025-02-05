@@ -36,7 +36,7 @@ export default {
   justify-content: center;
   border-bottom: $border solid 1px;
   &__container {
-    max-width: 1280px;
+    max-width: 1216px;
     width: 100%;
     display: flex;
     justify-content: space-between;

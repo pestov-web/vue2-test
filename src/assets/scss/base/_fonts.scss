@@ -1,0 +1,28 @@
+// Путь к шрифтам
+$font-path: '../assets/fonts/Merriweather/';
+// Подключение шрифта Merriweather Light (300)
+@font-face {
+  font-family: 'Merriweather';
+  src: url('#{$font-path}Merriweather-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Подключение шрифта Merriweather Regular (400)
+@font-face {
+  font-family: 'Merriweather';
+  src: url('#{$font-path}Merriweather-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Подключение шрифта Merriweather Bold (700)
+@font-face {
+  font-family: 'Merriweather';
+  src: url('#{$font-path}Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

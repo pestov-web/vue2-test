@@ -30,7 +30,7 @@ export default {
   &__list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 95px;
     display: flex;
     gap: 1rem;
   }

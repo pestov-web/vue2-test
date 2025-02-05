@@ -31,36 +31,45 @@ export default {
           id: 1,
           title: '«Рождение Венеры» Сандро Боттичелли',
           stock: true,
-          price: '1000000',
+          price: '2000000',
+          discont: '1000000',
           currency: 'rub',
-          description: '#',
-          pictures: ['1.png', '1_1.jpg', '1_2.jpg', '1_3.jpg'],
+          description:
+            '«Рождение Венеры» — картина выдающегося итальянского живописца периода кватроченто (раннего итальянского Возрождения) флорентийской школы Сандро Боттичелли.',
+          pictures: ['1.webp', '1_1.webp', '1_2.webp', '1_3.webp'],
         },
         {
           id: 2,
           title: '«Тайная вечеря» Леонардо да Винчи',
           stock: true,
           price: '3000000',
+          discont: '',
           currency: 'usd',
-          description: '#',
-          pictures: ['2.png'],
+          description:
+            '«Та́йная ве́черя» — монументальная роспись работы Леонардо да Винчи, изображающая сцену последней трапезы Христа со своими учениками.',
+          pictures: ['2.webp', '2_1.webp', '2_2.webp', '2_3.webp'],
         },
         {
           id: 3,
           title: '«Сотворение Адама» Микеланджело',
           stock: true,
-          price: '5000000',
+          price: '6000000',
+          discont: '4000000',
           currency: 'usd',
-          description: '#',
-          pictures: ['3.png'],
+          description:
+            '«Сотворение Адама» (итал. La creazione di Adamo) — фреска Микеланджело, написанная около 1511 года.',
+          pictures: ['3.webp', '3_1.webp', '3_2.webp', '3_3.webp'],
         },
         {
           id: 4,
           title: '«Урок анатомии» Рембрандт',
           stock: false,
           price: '7000000',
-          description: '#',
-          pictures: ['4.png'],
+          discont: '',
+          currency: 'usd',
+          description:
+            '«Урок анатомии доктора Тульпа» — картина выдающегося голландского живописца Рембрандта ван Рейна, написанная в 1632 году.',
+          pictures: ['4.webp'],
         },
       ],
       isModalOpen: false,
@@ -70,12 +79,10 @@ export default {
   },
   methods: {
     openModal(content) {
-      console.log('Открытие модального окна:', content);
       this.modalContent = content;
       this.isModalOpen = true;
     },
     closeModal() {
-      console.log('Закрытие модального окна');
       this.isModalOpen = false;
       this.modalContent = null;
     },
