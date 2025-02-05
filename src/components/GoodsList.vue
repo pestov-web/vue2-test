@@ -64,6 +64,7 @@ export default {
         </div>
       </li>
     </ul>
+    <span v-if="!data.length">Товары отсутсвуют ... </span>
   </section>
 </template>
 
