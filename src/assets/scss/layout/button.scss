@@ -1,0 +1,21 @@
+button {
+  width: 118px;
+  height: 48px;
+  background: $button;
+  color: $text-white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background: $button-hover;
+  }
+  &:active {
+    background: $button-card;
+  }
+  &:disabled {
+    background: $button-disabled;
+  }
+}

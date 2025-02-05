@@ -8,6 +8,14 @@ export default {
     NavMenu,
     SearchInput,
   },
+  props: {
+    data: Array,
+  },
+  methods: {
+    emitSearch(query) {
+      this.$emit('search', query);
+    },
+  },
 };
 </script>
 
@@ -15,7 +23,7 @@ export default {
   <header class="header">
     <div class="header__container">
       <NavMenu />
-      <SearchInput />
+      <SearchInput @search="emitSearch" />
     </div>
   </header>
 </template>

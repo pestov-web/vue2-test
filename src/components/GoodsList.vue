@@ -5,6 +5,25 @@ export default {
     category: String,
     data: Array,
   },
+  methods: {
+    handleOpenModal(good) {
+      this.$emit('open-modal', good);
+    },
+    formatPrice(good) {
+      let symbol = '';
+      switch (good.currency) {
+        case 'rub':
+          symbol = '₽';
+          break;
+        case 'usd':
+          symbol = '$';
+          break;
+        default:
+          symbol = ' уе';
+      }
+      return `${good.price} ${symbol}`;
+    },
+  },
 };
 </script>
 
@@ -13,20 +32,28 @@ export default {
     <h2 class="section__title">{{ category }}</h2>
     <ul class="goods__list">
       <li v-for="good in data" :key="good.id" class="goods__item">
-        <img :src="`/images/${good.pictures[0]}`" :alt="good.title" />
-        <h3
-          class="goods__title"
-          @click="$emit('open-modal', good)"
-          @keydown.enter="$emit('open-modal', good)"
-        >
-          {{ good.title }}
-        </h3>
-        <div v-if="good.stock" class="goods__stock">
-          <p class="goods__price">{{ good.price }}</p>
-          <button class="goods__btn">Добавить в корзину</button>
-        </div>
-        <div v-else class="goods__stock">
-          <p class="goods__price">Продано на аукционе</p>
+        <img
+          class="goods__img"
+          :src="`/images/${good.pictures[0]}`"
+          :alt="good.title"
+          @click="handleOpenModal(good)"
+          @keydown.enter="handleOpenModal(good)"
+        />
+        <div class="goods__info">
+          <h3
+            class="goods__info__title"
+            @click="handleOpenModal(good)"
+            @keydown.enter="handleOpenModal(good)"
+          >
+            {{ good.title }}
+          </h3>
+          <div v-if="good.stock" class="goods__info__stock">
+            <p class="goods__info__price">{{ formatPrice(good) }}</p>
+            <button class="goods__info__btn">Купить</button>
+          </div>
+          <div v-else class="goods__info__stock">
+            <p class="goods__info__price">Продано на аукционе</p>
+          </div>
         </div>
       </li>
     </ul>
@@ -46,17 +73,31 @@ export default {
   &__item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: $border solid 1px;
-    padding: 1rem;
     gap: 1rem;
     max-width: 280px;
     width: 100%;
   }
-  &__title {
+  &__img {
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease;
     &:hover {
-      color: #007bff;
+      transform: scale(1.03);
+    }
+  }
+  &__info {
+    padding: 10px 15px;
+    &__title {
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #007bff;
+      }
+    }
+    &__stock {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

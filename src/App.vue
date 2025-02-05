@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <AppHeader />
+    <AppHeader @search="handleSearch" />
     <main class="page">
-      <GoodsList :data="goods" :category="category" @open-modal="openModal" />
+      <GoodsList :data="filteredGoods" :category="category" @open-modal="openModal" />
     </main>
     <GoodsModal v-if="isModalOpen" :modalContent="modalContent" @close="closeModal" />
     <AppFooter />
@@ -32,14 +32,16 @@ export default {
           title: '«Рождение Венеры» Сандро Боттичелли',
           stock: true,
           price: '1000000',
+          currency: 'rub',
           description: '#',
-          pictures: ['1.png'],
+          pictures: ['1.png', '1_1.jpg', '1_2.jpg', '1_3.jpg'],
         },
         {
           id: 2,
           title: '«Тайная вечеря» Леонардо да Винчи',
           stock: true,
           price: '3000000',
+          currency: 'usd',
           description: '#',
           pictures: ['2.png'],
         },
@@ -48,6 +50,7 @@ export default {
           title: '«Сотворение Адама» Микеланджело',
           stock: true,
           price: '5000000',
+          currency: 'usd',
           description: '#',
           pictures: ['3.png'],
         },
@@ -62,6 +65,7 @@ export default {
       ],
       isModalOpen: false,
       modalContent: null,
+      searchQuery: '',
     };
   },
   methods: {
@@ -75,14 +79,20 @@ export default {
       this.isModalOpen = false;
       this.modalContent = null;
     },
+    handleSearch(query) {
+      this.searchQuery = query;
+    },
   },
   computed: {
-    // filteredProducts() {
-    //   // eslint-disable-next-line max-len
-    //   return this.data.filter((item) =>
-    //     item.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-    //   );
-    // },
+    filteredGoods() {
+      if (!this.searchQuery) {
+        return this.goods;
+      }
+      return this.goods.filter((good) => {
+        const title = good.title.toLowerCase();
+        return title.includes(this.searchQuery.toLowerCase());
+      });
+    },
   },
 };
 </script>

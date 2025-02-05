@@ -1,11 +1,22 @@
 <script>
 export default {
   name: 'SearchInput',
-  props: { data: Array },
+  data() {
+    return {
+      searchQuery: '',
+    };
+  },
+  methods: {
+    handleSubmit() {
+      this.$emit('search', this.searchQuery);
+    },
+  },
 };
 </script>
 <template>
-  <div>Search</div>
-  <!-- <input v-model="searchQuery" placeholder="Поиск..." /> -->
+  <form @submit.prevent="handleSubmit">
+    <input v-model="searchQuery" placeholder="Поиск по названию картины" />
+    <button type="submit">Найти</button>
+  </form>
 </template>
 <style lang="scss"></style>
