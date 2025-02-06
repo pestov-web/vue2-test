@@ -14,49 +14,32 @@ export default {
       default: false,
     },
   },
+  mounted() {
+    document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.handleClickOutside);
+  },
   methods: {
     closeMenu() {
       this.$emit('close');
+    },
+    handleClickOutside(event) {
+      if (this.isOpen && !this.$el.contains(event.target)) {
+        this.closeMenu();
+      }
     },
   },
 };
 </script>
 
 <template>
-  <div class="mobile-menu" :class="{ 'mobile-menu--open': isOpen }">
+  <div class="mobile-menu" :class="{ 'mobile-menu--open': isOpen }" @click.stop>
     <button class="mobile-menu__close" @click="closeMenu">
       <Icon icon="stash:times-duotone" />
     </button>
-    <NavMenu :isMobile="true" />
+    <div class="mobile-menu__content" @click.stop>
+      <NavMenu :isMobile="true" @item-click="closeMenu" />
+    </div>
   </div>
 </template>
-
-<style lang="scss">
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 260px;
-  height: 100vh;
-  background: #fff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
-
-  &--open {
-    right: 0;
-  }
-
-  &__close {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-  }
-}
-</style>

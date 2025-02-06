@@ -17,7 +17,12 @@
 @import 'layout/input';
 
 // components
-@import 'components/GoodsSlider.scss';
-@import 'components/NavMenu.scss';
-@import 'components/PriceDisplay.scss';
-@import 'components/SearchInput.scss';
+@import 'components/AppHeader';
+@import 'components/GoodsList';
+@import 'components/GoodsModal';
+@import 'components/GoodsSlider';
+@import 'components/NavMenu';
+@import 'components/MobileMenu';
+@import 'components/PriceDisplay';
+@import 'components/SearchInput';
+@import 'components/AppFooter';

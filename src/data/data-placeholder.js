@@ -30,7 +30,7 @@ const data = [
     currency: 'usd',
     description:
       '«Сотворение Адама» (итал. La creazione di Adamo) — фреска Микеланджело, написанная около 1511 года.',
-    pictures: ['3.webp', '3_1.webp', '3_2.webp', '3_3.webp'],
+    pictures: ['3.webp', '3_1.webp'],
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const data = [
     currency: 'usd',
     description:
       '«Урок анатомии доктора Тульпа» — картина выдающегося голландского живописца Рембрандта ван Рейна, написанная в 1632 году.',
-    pictures: ['4.webp'],
+    pictures: ['4.webp', '4_1.webp'],
   },
 ];
 

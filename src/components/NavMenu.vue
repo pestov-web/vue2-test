@@ -5,6 +5,8 @@
         v-for="link in links"
         :key="link.text"
         :class="['nav-menu__item', { 'nav-menu__item--mobile': isMobile }]"
+        @click="$emit('item-click')"
+        @keydown.enter="$emit('item-click')"
       >
         <a :href="link.url" :class="['nav-menu__link', { 'nav-menu__link--mobile': isMobile }]">{{
           link.text

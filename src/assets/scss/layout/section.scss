@@ -3,13 +3,16 @@ section {
   margin: 0 auto;
   max-width: 1216px;
   width: 100%;
-  padding: 0 20px;
+  padding: 50px 19px;
+  @include sm {
+    padding: 0 19px;
+  }
   @include xl {
     padding: 0;
   }
   .section__title {
     padding: 0;
-    margin: 49px 0 39px;
+    margin: 46px 0 39px;
     font-size: 20px;
 
     @include xl {

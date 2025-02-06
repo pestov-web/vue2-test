@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <carousel class="slider" :per-page="1" :pagination-enabled="true" :navigation-enabled="true">
+  <carousel class="slider" :per-page="1" :pagination-enabled="true" :autoplay="true">
     <slide v-for="item in pictures" :key="item" class="slider__item">
       <img :src="`/images/${item}`" :alt="item" class="slider__image" />
     </slide>
