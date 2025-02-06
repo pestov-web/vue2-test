@@ -6,7 +6,9 @@
     @keydown.enter="$emit('close')"
   >
     <div class="modal__content">
-      <button class="modal__close" @click="$emit('close')">✖</button>
+      <button class="modal__close" @click="$emit('close')">
+        <Icon icon="stash:times-duotone" />
+      </button>
       <GoodsSlider :pictures="modalContent.pictures" class="modal__slider" />
       <h3 class="modal__title">{{ modalContent.title }}</h3>
       <p class="modal__description">{{ modalContent.description }}</p>
@@ -23,6 +25,7 @@
 </template>
 
 <script>
+import { Icon } from '@iconify/vue2';
 import GoodsSlider from './GoodsSlider.vue';
 import priceMixin from '../mixins/priceMixin';
 
@@ -34,6 +37,7 @@ export default {
   },
   components: {
     GoodsSlider,
+    Icon,
   },
 };
 </script>
