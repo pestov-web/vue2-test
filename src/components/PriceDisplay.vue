@@ -1,23 +1,15 @@
 <template>
-  <div>
-    <template v-if="good.discont">
-      <p class="price">
-        <span class="price__original">
-          {{ formatPrice(good.price, good.currency) }}
-        </span>
-        <span class="price__discount">
-          {{ formatPrice(good.discont, good.currency) }}
-        </span>
-      </p>
-    </template>
-    <template v-else>
-      <p class="price">
-        <span class="price__discount">
-          {{ formatPrice(good.price, good.currency) }}
-        </span>
-      </p>
-    </template>
-  </div>
+  <p class="price">
+    <!-- Если есть скидка, выводим оригинальную цену (зачёркнутую) -->
+    <span v-if="good.discont" class="price__original">
+      {{ formatPrice(good.price, good.currency) }}
+    </span>
+    <!-- Всегда выводим финальную цену:
+         если скидка есть, то discount, иначе исходную цену -->
+    <span :class="good.discont ? 'price__discount' : 'price__final'">
+      {{ formatPrice(good.discont ? good.discont : good.price, good.currency) }}
+    </span>
+  </p>
 </template>
 
 <script>

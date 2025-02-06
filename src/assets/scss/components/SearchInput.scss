@@ -1,15 +1,39 @@
 .search-form {
   display: flex;
   justify-content: flex-end;
-  max-width: 500px;
+  max-width: 300px;
   width: 100%;
   font-size: 14px;
+  @include lg {
+    max-width: 400px;
+  }
+  @include xl {
+    max-width: 500px;
+  }
   &__input {
     width: 100%;
-    max-width: 295px;
+    max-width: 235px;
+    font-size: 12px;
+    height: 36px;
+    @include lg {
+      font-size: 14px;
+      max-width: 255px;
+      height: 48px;
+    }
+    @include xl {
+      max-width: 295px;
+    }
   }
   &__btn {
-    width: 122px;
-    font-size: 14px;
+    width: 100px;
+    height: 36px;
+    font-size: 12px;
+    @include lg {
+      width: 122px;
+      font-size: 14px;
+      height: 48px;
+    }
+    @include xl {
+    }
   }
 }

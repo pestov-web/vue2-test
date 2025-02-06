@@ -2,9 +2,25 @@
   &__list {
     list-style: none;
     padding: 0;
-    margin: 0 0 0 95px;
+    margin: 0;
     display: flex;
-    gap: 49px;
+    gap: 29px;
+    flex-direction: column;
+    @include sm {
+      flex-direction: row;
+      gap: 29px;
+    }
+    @include lg {
+      gap: 39px;
+    }
+    @include xl {
+      gap: 49px;
+      margin-left: 95px;
+    }
+    &--mobile {
+      flex-direction: column;
+      gap: 12px;
+    }
   }
   &__item {
     margin: 0;
@@ -13,10 +29,13 @@
     text-decoration: none;
     color: $text-dark;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     transition: color 0.3s ease;
     &:hover {
       color: #007bff;
+    }
+    @include xl {
+      font-size: 14px;
     }
   }
 }
