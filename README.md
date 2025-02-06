@@ -47,8 +47,6 @@ vue2-test/
    cd vue2-test
    ```
 
-````
-
 2. **Установите зависимости:**
 
    ```bash
@@ -86,4 +84,3 @@ vue2-test/
 - **Iconify** ([Iconify](https://iconify.design/) для Vue2)
 - **LocalStorage** для сохранения состояния корзины
 - [**vue-carousel**](https://github.com/SSENSE/vue-carousel) (опционально, для слайдера товаров)
-````
