@@ -18,7 +18,7 @@
 
 ## Структура проекта
 
-````
+```
 vue2-test/
 ├── public/
 │ ├── favicon.ico
@@ -36,7 +36,7 @@ vue2-test/
 ├── package.json
 ├── vue.config.js
 └── README.md
-
+```
 
 ## Установка
 
@@ -45,6 +45,7 @@ vue2-test/
    ```bash
    git clone https://github.com/pestov-web/vue2-test.git
    cd vue2-test
+   ```
 
 ````
 
@@ -85,3 +86,4 @@ vue2-test/
 - **Iconify** ([Iconify](https://iconify.design/) для Vue2)
 - **LocalStorage** для сохранения состояния корзины
 - [**vue-carousel**](https://github.com/SSENSE/vue-carousel) (опционально, для слайдера товаров)
+````
