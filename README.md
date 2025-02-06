@@ -1,4 +1,3 @@
-```
 # Vue2 Test
 
 Это тестовый проект интернет-магазина, реализованный на Vue 2 (Options API)
@@ -18,7 +17,6 @@
 - **Слайдер товаров** (опционально, используется [vue-carousel](https://github.com/SSENSE/vue-carousel)).
 
 ## Структура проекта
-```
 
 vue2-test/
 ├── public/
@@ -38,8 +36,6 @@ vue2-test/
 ├── vue.config.js
 └── README.md
 
-````
-
 ## Установка
 
 1. **Клонируйте репозиторий:**
@@ -47,7 +43,8 @@ vue2-test/
    ```bash
    git clone https://github.com/pestov-web/vue2-test.git
    cd vue2-test
-````
+
+   ```
 
 2. **Установите зависимости:**
 
