@@ -36,7 +36,8 @@ vue2-test/
 ├── package.json
 ├── vue.config.js
 └── README.md
-```
+
+
 ## Установка
 
 1. **Клонируйте репозиторий:**
