@@ -24,9 +24,6 @@
   &__img {
     cursor: pointer;
     transition: transform 0.3s ease;
-    &:hover {
-      transform: scale(1.03);
-    }
   }
   &__info {
     padding: 4px 25px;
